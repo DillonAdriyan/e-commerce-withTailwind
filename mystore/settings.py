@@ -35,6 +35,7 @@ CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS',cast=str,default='http://lo
 # Application definition
 INSTALLED_APPS = [
     #base
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -107,12 +108,8 @@ WSGI_APPLICATION = 'mystore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('DATABASE_ENGI',cast=str,default='django.db.backends.postgresql_psycopg2'),
-        'NAME': config('DATABASE_NAME',cast=str,default='saleapp'),
-        'HOST': config('DATABASE_HOST',cast=str,default='localhost'),
-        'PORT': config('DATABASE_PORT',cast=str,default='5432'),
-        'USER': config('DATABASE_USER',cast=str,default='postgres'),
-        'PASSWORD': config('DATABASE_PASSWORD',cast=str,default='postgres'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -140,9 +137,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 
-LANGUAGE_CODE = 'vi'
+LANGUAGE_CODE = 'id'
 
-TIME_ZONE = 'Asia/Ho_Chi_Minh'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
@@ -152,7 +149,7 @@ USE_TZ = True
 
 
 LANGUAGES = [
-    ('vi', _('Vietnamese')),
+    ('id', _('Indonesian')),
     ('en', _('English')),
 ]
 
